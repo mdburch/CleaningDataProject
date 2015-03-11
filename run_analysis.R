@@ -31,4 +31,5 @@ fullData$activity <-as.factor(fullData$activity)
 levels(fullData$activity) <- activity_labels
 
 # Extract the mean and std columns
-meanStdData<-select(fullData, subject, activity, contains("mean"), contains("std"))
+meanStdData<-select(fullData, subject, activity, contains("mean..", ignore.case=FALSE), contains("std..", ignore.case=FALSE))
+
