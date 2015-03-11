@@ -21,9 +21,13 @@ trainData <- cbind(trainSubject, trainY, trainX)
 fullData <- rbind(testData, trainData)
 fullData <- tbl_df(fullData)
 
-# Read in the column names and set them to the data
-colNames <- make.names(read.table("./features.txt", stringsAsFactors=FALSE)$V2, unique=TRUE)
-colnames(fullData) <- c("subject", "activity", colNames)
+# Read in the column names
+# Modify the names so they can be applied as column names
+# Set names to columns names
+colNames <- read.table("./features.txt", stringsAsFactors=FALSE)$V2
+colNames <- gsub("-", "_", colNames)
+colNames <- gsub("()", "Val", colNames, fixed=TRUE)
+colnames(fullData) <- c("subject", "activity", make.names(colNames, unique=TRUE))
 
 # Change the activity descriptions
 activity_labels <- read.table("./activity_labels.txt")$V2
@@ -31,5 +35,4 @@ fullData$activity <-as.factor(fullData$activity)
 levels(fullData$activity) <- activity_labels
 
 # Extract the mean and std columns
-meanStdData<-select(fullData, subject, activity, contains("mean..", ignore.case=FALSE), contains("std..", ignore.case=FALSE))
-
+meanStdData<-select(fullData, subject, activity, contains("meanVal", ignore.case=FALSE), contains("stdVal", ignore.case=FALSE))
