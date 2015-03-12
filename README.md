@@ -1,20 +1,17 @@
 # CleaningDataProject
-Course Project for Getting and Cleaning Data Coursera course
-
----
-Matt Burch
 Tidy Data for Human Activity Using Smartphones Dataset Version 1.0
----
+Matt Burch
 
 ---
 ### Contents of CleaningDataProject
 ---
 The contents of the this repository includes:  
+
 + **run_analysis.R**: the R script used to simplify the data and perform analysis   
 + **CodeBook.md**: describes the variables, the data, and all transformations  
 + **README.md**: explains how all of the scripts work and are connected (this file)  
 + **tidyData.txt**: the output file of the run_analysis.R script including data and column names  
-+ **read\_tidydata.R**: the R script used to import the tidyData (tidyData.txt) produced by run_analysis.R  
++ **read\_tidydata.R**: the R script used to import the tidyData.txt produced by run_analysis.R  
 
 ---
 ### Re-running Analysis Code in R
