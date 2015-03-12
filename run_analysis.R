@@ -36,3 +36,9 @@ levels(fullData$activity) <- activity_labels
 
 # Extract the mean and std columns
 meanStdData<-select(fullData, subject, activity, contains("meanVal", ignore.case=FALSE), contains("stdVal", ignore.case=FALSE))
+
+
+tidyData <- meanStdData %>%
+ group_by(subject, activity) %>%
+ summarise_each(funs(mean)) %>%
+ print
