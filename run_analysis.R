@@ -46,4 +46,4 @@ colnames(tidyData) <- gsub("meanVal", "AvgMeans", colnames(tidyData))
 colnames(tidyData) <- gsub("stdVal", "AvgStd", colnames(tidyData))
 
 # Write out the results
-write.table(tidyData, file="tidyData",row.names=FALSE)
+write.table(tidyData, file="tidyData.txt",row.names=FALSE)
