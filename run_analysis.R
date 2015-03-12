@@ -1,5 +1,4 @@
 library(dplyr)
-library(tidyr)
 
 # Read in the test data
 testX <- read.table("./test/X_test.txt")
@@ -37,8 +36,14 @@ levels(fullData$activity) <- activity_labels
 # Extract the mean and std columns
 meanStdData<-select(fullData, subject, activity, contains("meanVal", ignore.case=FALSE), contains("stdVal", ignore.case=FALSE))
 
-
+# Group data by subject and activity and summarize with the mean
 tidyData <- meanStdData %>%
  group_by(subject, activity) %>%
- summarise_each(funs(mean)) %>%
- print
+ summarise_each(funs(mean))
+
+# Modify column names to better represent the new data
+colnames(tidyData) <- gsub("meanVal", "AvgMeans", colnames(tidyData))
+colnames(tidyData) <- gsub("stdVal", "AvgStd", colnames(tidyData))
+
+# Write out the results
+write.table(tidyData, file="tidyData",row.names=FALSE)
