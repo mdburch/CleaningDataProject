@@ -2,63 +2,64 @@
 Course Project for Getting and Cleaning Data Coursera course
 
 ---
-##### Matt Burch
-##### Tidy Data for Human Activity Using Smartphones Dataset Version 1.0
+Matt Burch
+Tidy Data for Human Activity Using Smartphones Dataset Version 1.0
 ---
 
 ---
 ### Contents of CleaningDataProject
 ---
-##### The contents of the this repository includes:
-#####	run_analysis.R   : the R script used to simplify the data and perform analysis 
-#####	CodeBook.md      : describes the variables, the data, and all transformations
-#####	README.md        : explains how all of the scripts work and are connected (this file)
-#####	tidyData         : the output file of the run_analysis.R script including data and column names
-#####	read\_tidydata.R   : the R script used to import the tidyData (tidyData.txt) produced by run_analysis.R
+The contents of the this repository includes:  
++ **run_analysis.R**: the R script used to simplify the data and perform analysis   
++ **CodeBook.md**: describes the variables, the data, and all transformations  
++ **README.md**: explains how all of the scripts work and are connected (this file)  
++ **tidyData.txt**: the output file of the run_analysis.R script including data and column names  
++ **read\_tidydata.R**: the R script used to import the tidyData (tidyData.txt) produced by run_analysis.R  
 
 ---
 ### Re-running Analysis Code in R
 ---
-*The data represents data collected from the accelerometers from the Samsung Galaxy S smartphone.
-*A full description can be found at [http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones]
-*To download the data, use the link [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip]
-*Upon downloading and unzipping the data the structure should be as follows:
-**UCI HAR Dataset
-***test
-****Intertial Signals
-*****body\_acc\_x\_test.txt
-*****body\_acc\_y\_test.txt
-*****body\_acc\_z\_test.txt
-*****body\_gyro\_x\_test.txt 	
-*****body\_gyro\_y\_test.txt
-*****body\_gyro\_z\_test.txt
-*****total\_acc\_x\_test.txt
-*****total\_acc\_y\_test.txt
-*****total\_acc\_z\_test.txt
-***subject\_test.txt
-****X\_test.txt
-****y\_test.txt		
-***train
-*****body\_acc\_x\_train.txt
-*****body\_acc\_y\_train.txt
-*****body\_acc\_z\_train.txt
-*****body\_gyro\_x\_train.txt 	
-*****body\_gyro\_y\_train.txt
-*****body\_gyro\_z\_train.txt
-*****total\_acc\_x\_train.txt
-*****total\_acc\_y\_train.txt
-*****total\_acc\_z\_train.txt
-***subject\_train.txt
-****X\_train.txt
-****y\_train.txt	
-**activity\_labels.txt
-**features.txt
-**features\_info.txt
-**README.txt
-*Upon extracting the data copy the run_analysis.R script into the main directory (UCI HAR Dataset) so the data files can be found
-*Run the script by using the source() command ex. source("path_to_file/run_analysis.R")
-*The script will run and output tidyData.txt back our main directory (UCI HAR Dataset)
-*To view more information about how the tidying process and analysis piece view the CodeBook.md
++ The data represents data collected from the accelerometers from the Samsung Galaxy S smartphone.
++ A full description can be found at [http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones]
++ To download the data, use the link [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip]
++ Upon downloading and unzipping the data the structure should be as follows:
+  + UCI HAR Dataset
+    + test
+      + Intertial Signals
+        + body\_acc\_x\_test.txt
+        + body\_acc\_y\_test.txt
+        + body\_acc\_z\_test.txt
+        + body\_gyro\_x\_test.txt 	
+        + body\_gyro\_y\_test.txt
+        + body\_gyro\_z\_test.txt
+        + total\_acc\_x\_test.txt
+        + total\_acc\_y\_test.txt
+        + total\_acc\_z\_test.txt
+      + subject\_test.txt
+      + X\_test.txt
+      + y\_test.txt		
+    + train
+      + Intertial Signals
+        + body\_acc\_x\_train.txt
+        + body\_acc\_y\_train.txt
+        + body\_acc\_z\_train.txt
+        + body\_gyro\_x\_train.txt 	
+        + body\_gyro\_y\_train.txt
+        + body\_gyro\_z\_train.txt
+        + total\_acc\_x\_train.txt
+        + total\_acc\_y\_train.txt
+        + total\_acc\_z\_train.txt
+      + subject\_train.txt
+      + X\_train.txt
+      + y\_train.txt
+  + activity\_labels.txt
+  + features.txt
+  + features\_info.txt
+  + README.txt
++ Upon extracting the data copy the run_analysis.R script into the main directory (UCI HAR Dataset) so the data files can be found
++ Run the script by using the source() command ex. source("path_to_file/run_analysis.R")
++ The script will run and output tidyData.txt back our main directory (UCI HAR Dataset)
++ To view more information about how the tidying process and analysis piece view the CodeBook.md
 
 ---
 ### Using Existing Tidy Data
