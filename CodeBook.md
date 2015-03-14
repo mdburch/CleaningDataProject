@@ -4,13 +4,13 @@
 ---
 ### Raw Data/Variable Descriptions (CODEBOOK)
 ---
++ INCLUDE THE NOTES FROM THE README FILE
 *DESCRIBE the raw data a little bit
 *For more information on the raw data visit the README file found in UCI HAR Dataset directory 
 **If you need access to the UCI HAR Dataset please reference the README file from this repository
 ---
 ### Tidy Data/Variable Descriptions (CODEBOOK)
 ---
-*SORT THE DATA BEFORE WRITING IT OUT!!!
 The tidy data set
 The general principles of tidy data are laid out by Hadley Wickham in this paper and this video. The paper and the video are both focused on the R package, which you may or may not know how to use. Regardless the four general principles you should pay attention to are:
 

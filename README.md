@@ -14,6 +14,25 @@ The contents of the this repository includes:
 + **read\_tidydata.R**: the R script used to import the tidyData.txt produced by run_analysis.R  
 
 ---
+### Experiment Description
+---
++ This analysis was performed on the dataset produced by Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto of Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto. (www.smartlab.ws) [1]
++ From their README, they describe there experiments as the following:
+  + Group of 30 volunteers within an age bracket of 19-48 years
+  + Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. 
+  + Captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz using the embedded accelerometer and gyroscope
+  + The experiments have been video-recorded to label the data manually 
+  + The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+  + The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). 
+    + The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. 
+    + The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. 
+    + From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
++ For more information please view the UCI HAR Dataset readme
+---
+ File Nomenclature
+---
+
+---
 ### Re-running Analysis Code in R
 ---
 + The data represents data collected from the accelerometers from the Samsung Galaxy S smartphone.
@@ -69,3 +88,10 @@ The contents of the this repository includes:
 + When the scripts completes, R will display the contents of tidyData using the View() command
   + This tidy data is stored in the data frame tidydata for your usage
   + For more information on the contents of this data frame, please reference the CodeBook.md
+  
+  
+ 
+ +[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
+This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited.
+Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
+
