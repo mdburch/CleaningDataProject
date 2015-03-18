@@ -13,6 +13,22 @@ The contents of the this repository includes:
 + **read\_tidydata.R**: the R script used to import the tidyData.txt produced by run_analysis.R  
 
 ---
+### Experiment Files Utilized [1]
+---
++ Below is a description of the files used in the data analysis
+  + 'features_info.txt': Shows information about the variables used on the feature vector.
+  + 'features.txt': List of all features.
+  + 'activity_labels.txt': Links the class labels with their activity name.
+  + 'train/X_train.txt': Training set.
+  + 'train/y_train.txt': Training labels.
+  + 'test/X_test.txt': Test set.
+  + 'test/y_test.txt': Test labels.
+  + 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+  + 'test/subject_test.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
++ All files in the inertial directories were not used for this analysis. 
++ Addtionally the README and features_info files were used for comprehension but were not imported into R
+
+---
 ### Original Experiment Description [1]
 ---
 + Group of 30 volunteers within an age bracket of 19-48 years
@@ -74,23 +90,7 @@ The contents of the this repository includes:
 + To view more information about how the tidying process and analysis piece view the CodeBook.md
 
 ---
-### Experiment Files Utilized
----
-+ Below is a description of the files used in the data analysis
-  + 'features_info.txt': Shows information about the variables used on the feature vector.
-  + 'features.txt': List of all features.
-  + 'activity_labels.txt': Links the class labels with their activity name.
-  + 'train/X_train.txt': Training set.
-  + 'train/y_train.txt': Training labels.
-  + 'test/X_test.txt': Test set.
-  + 'test/y_test.txt': Test labels.
-  + 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
-  + 'test/subject_test.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
-+ All files in the inertial directories were not used for this analysis. 
-+ Addtionally the README and features_info files were used for comprehension but were not imported into R
-
----
-### Using Existing Tidy Data
+### Using the Tidy Data
 ---
 + To use the existing tidyData in the repo, copy the get_tidydata.R script and the tidyData.txt files locally to your computer in the same directory
   + **NOTE:**If you are re-running the code first, ensure that get_tidydata.R is in the same directory as run_analysis.R
