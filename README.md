@@ -75,8 +75,21 @@ The contents of the this repository includes:
 + To view more information about how the tidying process and analysis piece view the CodeBook.md
 
 ---
-### File Nomenclature
+### File Utilized
 ---
++ Below is a description of the files used in the data analysis
+  + 'features_info.txt': Shows information about the variables used on the feature vector.
+  + 'features.txt': List of all features.
+  + 'activity_labels.txt': Links the class labels with their activity name.
+  + 'train/X_train.txt': Training set.
+  + 'train/y_train.txt': Training labels.
+  + 'test/X_test.txt': Test set.
+  + 'test/y_test.txt': Test labels.
+  + 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+  + 'test/subject_test.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
++ All files in the inertial directories were not used for this anaylis. 
++ Addtionally the README and features_info files were used for comprehension but were not imported into R
+
 + Add details about file names from the dataset
 + Include which files were used in the analysis and which were not
 
