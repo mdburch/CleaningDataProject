@@ -1,39 +1,45 @@
 ### Raw Data/Variable Descriptions [1]
 ---
-* 70% of the volunteers were selected for generating the training data and 30% the test data. 
-* A 561-feature vector with time and frequency domain variables.
-* Features are normalized and bounded within [-1,1].
-* Features selected come from the accelerometer and gyroscope 3-axial raw signals (ex. tAcc-XYZ and tGyro-XYZ)
-* Prefix of **t** denotes time domain signals captured at a constant rate of 50 hz then filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise (ex. tBodyAcc-XYZ and tGravityAcc-XYZ)
-* Prefix of **f** denotes frequency domain signals derived by using a Fast Fourier Transform (FFT) (ex. fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ)
-* Acceleration signals were separated in **Body** and **Gravity** acceleration signala using another low pass Butterworth filter with a corner frequency of 0.3 Hz
-* Ending of **-X** **-Y** or **-Z** denotes which axis of the accelerometer/gyroscope the value is for
-* **Jerk** represents signals of Jerk Body linear acceleration and angular velocity were derived in time (ex. tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ)
-* **Mag** represents signals of the magnitude of the three-dimensional signals calculated using the Euclidean norm (ex. tBodyAccMag, tGravityAccMag, tBodyAccJerkMag) 
- * Variables of the these different features include:
-   * mean(): Mean value
-   * std(): Standard deviation
-   * mad(): Median absolute deviation 
-   * max(): Largest value in array
-   * min(): Smallest value in array
-   * sma(): Signal magnitude area
-   * energy(): Energy measure. Sum of the squares divided by the number of values. 
-   * iqr(): Interquartile range 
-   * entropy(): Signal entropy
-   * arCoeff(): Autorregresion coefficients with Burg order equal to 4
-   * correlation(): correlation coefficient between two signals
-   * maxInds(): index of the frequency component with largest magnitude
-   * meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-   * skewness(): skewness of the frequency domain signal 
-   * kurtosis(): kurtosis of the frequency domain signal 
-   * bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
-   * angle(): Angle between to vectors.
-   * Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
-     * gravityMean
-     * tBodyAccMean
-     * tBodyAccJerkMean
-     * tBodyGyroMean
-     * tBodyGyroJerkMean
+* Data Set 
+  * 70% of the volunteers were selected for generating the training data and 30% the test data
+    * The data was separated into the test and training data
+    * The full data set includes the training set, training labels, test set, and test labels.
+      * Additionally, the feature names and activity labels are available in separate files 
+      * Inertial signals test and train data are available but were not used for this tidying process
+  * A 561-feature vector with time and frequency domain variables.
+  * Features are normalized and bounded within [-1,1].
+* Column Structure (features)
+  * Features selected come from the accelerometer and gyroscope 3-axial raw signals (ex. tAcc-XYZ and tGyro-XYZ)
+  * Prefix of **t** denotes time domain signals captured at a constant rate of 50 hz then filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise (ex. tBodyAcc-XYZ and tGravityAcc-XYZ)
+  * Prefix of **f** denotes frequency domain signals derived by using a Fast Fourier Transform (FFT) (ex. fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ)
+  * Acceleration signals were separated in **Body** and **Gravity** acceleration signala using another low pass Butterworth filter with a corner frequency of 0.3 Hz
+  * Ending of **-X** **-Y** or **-Z** denotes which axis of the accelerometer/gyroscope the value is for
+  * **Jerk** represents signals of Jerk Body linear acceleration and angular velocity were derived in time (ex. tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ)
+  * **Mag** represents signals of the magnitude of the three-dimensional signals calculated using the Euclidean norm (ex. tBodyAccMag, tGravityAccMag, tBodyAccJerkMag) 
+   * Variables of the these different features include:
+     * mean(): Mean value
+     * std(): Standard deviation
+     * mad(): Median absolute deviation 
+     * max(): Largest value in array
+     * min(): Smallest value in array
+     * sma(): Signal magnitude area
+     * energy(): Energy measure. Sum of the squares divided by the number of values. 
+     * iqr(): Interquartile range 
+     * entropy(): Signal entropy
+     * arCoeff(): Autorregresion coefficients with Burg order equal to 4
+     * correlation(): correlation coefficient between two signals
+     * maxInds(): index of the frequency component with largest magnitude
+     * meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+     * skewness(): skewness of the frequency domain signal 
+     * kurtosis(): kurtosis of the frequency domain signal 
+     * bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+     * angle(): Angle between to vectors.
+     * Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+       * gravityMean
+       * tBodyAccMean
+       * tBodyAccJerkMean
+       * tBodyGyroMean
+       * tBodyGyroJerkMean
    
 * For more information on the raw data visit the README file or features_info found in UCI HAR Dataset directory 
 * If you need access to the UCI HAR Dataset please reference the README file from this repository
@@ -41,7 +47,7 @@
 ---
 ### Tidying Data Process
 ---
-This tidying process was performed on a Windows 7 computer using 64 bit version of R 3.1.2 using the dplyr library
+This tidying process was performed on a Windows 7 computer using 64 bit version of R 3.1.2 using the dplyr library.
 
 1. Read the X_test.txt file into a data frame. This file represents the features of the experiment for the test subjects
 2. Read the Y_test.txt into a data frame. This file represents the activity performed assocaited with each record of the X_test.txt data set.
@@ -67,10 +73,11 @@ This tidying process was performed on a Windows 7 computer using 64 bit version 
 ---
 ### Tidy Data/Variable Descriptions
 ---
-* The resulting tidy data is a data frame of size 180 x 68
+* Data Set
+  * The resulting tidy data is a data frame of size 180 x 68
   * Each record in the data frame is unique representing a subject performing one of the activities
   * Each column represents an average of the feature for that subject for the given activity
-* Column Structure
+* Column Structure (features)
   * subject - ordinal - Range:1-30
   * activity - categorical - Range:WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
   * Features - continuous - Range: Values normalized from -1 to 1 
@@ -79,6 +86,8 @@ This tidying process was performed on a Windows 7 computer using 64 bit version 
       * f is a frequency domain signal
       * Gravity is a gavity acceleration signal
       * Body is a body acceleration signal
+      * Jerk is  jerk Body linear acceleration
+      * Mag is signals of the magnitude of the three-dimensional signals
       * -XYZ represents the axis the data was read from
       * For more details read the raw data description above
     *   AvgMeans - the average mean value of all samples for a subject performing a given activity
