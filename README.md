@@ -33,7 +33,7 @@ The contents of the this repository includes:
  File Nomenclature
 ---
 + Add details about file names from the dataset
-
++ Include which files were used in the analysis and which were not
 ---
 ### Re-running Analysis Code in R
 ---
