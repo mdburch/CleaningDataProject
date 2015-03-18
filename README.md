@@ -1,6 +1,5 @@
 # CleaningDataProject
-Tidy Data for Human Activity Using Smartphones Dataset Version 1.0
-Matt Burch
+Tidy Data for Human Activity Using Smartphones Dataset Version 1.0 - Matt Burch
 
 ---
 ### Contents of CleaningDataProject
@@ -14,12 +13,12 @@ The contents of the this repository includes:
 + **read\_tidydata.R**: the R script used to import the tidyData.txt produced by run_analysis.R  
 
 ---
-### Experiment Description [1]
+### Original Experiment Description [1]
 ---
 + Group of 30 volunteers within an age bracket of 19-48 years
 + Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. 
 + Captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz using the embedded accelerometer and gyroscope
-+ The experiments have been video-recorded to label the data manually 
++ The experiments were video-recorded to label the data manually 
 + The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 + The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). 
   + The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. 
@@ -30,7 +29,7 @@ The contents of the this repository includes:
 ---
 ### Re-running Analysis Code in R
 ---
-+ The data represents data collected from the accelerometers from the Samsung Galaxy S smartphone.
++ The data represents data collected from the accelerometers and gyroscopes from the Samsung Galaxy S smartphone.
 + A full description can be found at [http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones]
 + To download the data, use the link [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip]
 + Upon downloading, unzip the folder into your working directory of R
@@ -75,7 +74,7 @@ The contents of the this repository includes:
 + To view more information about how the tidying process and analysis piece view the CodeBook.md
 
 ---
-### File Utilized
+### Experiment Files Utilized
 ---
 + Below is a description of the files used in the data analysis
   + 'features_info.txt': Shows information about the variables used on the feature vector.
@@ -87,11 +86,8 @@ The contents of the this repository includes:
   + 'test/y_test.txt': Test labels.
   + 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
   + 'test/subject_test.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
-+ All files in the inertial directories were not used for this anaylis. 
++ All files in the inertial directories were not used for this analysis. 
 + Addtionally the README and features_info files were used for comprehension but were not imported into R
-
-+ Add details about file names from the dataset
-+ Include which files were used in the analysis and which were not
 
 ---
 ### Using Existing Tidy Data
