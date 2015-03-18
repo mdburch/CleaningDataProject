@@ -3,33 +3,40 @@
 * 70% of the volunteers were selected for generating the training data and 30% the test data. 
 * A 561-feature vector with time and frequency domain variables.
 * Features are normalized and bounded within [-1,1].
-* 
-
-*For more information on the raw data visit the README file or features_info found in UCI HAR Dataset directory 
-**If you need access to the UCI HAR Dataset please reference the README file from this repository
-
-* Prefix of t denotes time domain signals captured at a constant rate of 50 hz
-* Prefix of f denotes frequency domain signals
-* Body represents acceleration signals on the body while Gravity represents acceleration signal due to gravity
-* Ending of -X -Y or -Z denotes which axis of the accelerometer/gyroscope the value is for
-* The 
-    * tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+* Features selected come from the accelerometer and gyroscope 3-axial raw signals (ex. tAcc-XYZ and tGyro-XYZ)
+* Prefix of **t** denotes time domain signals captured at a constant rate of 50 hz then filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise (ex. tBodyAcc-XYZ and tGravityAcc-XYZ)
+* Prefix of **f** denotes frequency domain signals derived by using a Fast Fourier Transform (FFT) (ex. fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ)
+* Acceleration signals were separated in **Body** and **Gravity** acceleration signala using another low pass Butterworth filter with a corner frequency of 0.3 Hz
+* Ending of **-X** **-Y** or **-Z** denotes which axis of the accelerometer/gyroscope the value is for
+* **Jerk** represents signals of Jerk Body linear acceleration and angular velocity were derived in time (ex. tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ)
+* **Mag** represents signals of the magnitude of the three-dimensional signals calculated using the Euclidean norm (ex. tBodyAccMag, tGravityAccMag, tBodyAccJerkMag) 
+ * Variables of the these different features include:
+   * mean(): Mean value
+   * std(): Standard deviation
+   * mad(): Median absolute deviation 
+   * max(): Largest value in array
+   * min(): Smallest value in array
+   * sma(): Signal magnitude area
+   * energy(): Energy measure. Sum of the squares divided by the number of values. 
+   * iqr(): Interquartile range 
+   * entropy(): Signal entropy
+   * arCoeff(): Autorregresion coefficients with Burg order equal to 4
+   * correlation(): correlation coefficient between two signals
+   * maxInds(): index of the frequency component with largest magnitude
+   * meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+   * skewness(): skewness of the frequency domain signal 
+   * kurtosis(): kurtosis of the frequency domain signal 
+   * bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+   * angle(): Angle between to vectors.
+   * Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+     * gravityMean
+     * tBodyAccMean
+     * tBodyAccJerkMean
+     * tBodyGyroMean
+     * tBodyGyroJerkMean
+   
+* For more information on the raw data visit the README file or features_info found in UCI HAR Dataset directory 
+* If you need access to the UCI HAR Dataset please reference the README file from this repository
 
 ---
 ### Tidying Data Process
