@@ -1,13 +1,41 @@
-### Raw Data/Variable Descriptions
+### Raw Data/Variable Descriptions [1]
 ---
-+ INCLUDE THE NOTES FROM THE README FILE
-*DESCRIBE the raw data a little bit
-*For more information on the raw data visit the README file found in UCI HAR Dataset directory 
+* 70% of the volunteers were selected for generating the training data and 30% the test data. 
+* A 561-feature vector with time and frequency domain variables.
+* Features are normalized and bounded within [-1,1].
+* 
+
+*For more information on the raw data visit the README file or features_info found in UCI HAR Dataset directory 
 **If you need access to the UCI HAR Dataset please reference the README file from this repository
+
+* Prefix of t denotes time domain signals captured at a constant rate of 50 hz
+* Prefix of f denotes frequency domain signals
+* Body represents acceleration signals on the body while Gravity represents acceleration signal due to gravity
+* Ending of -X -Y or -Z denotes which axis of the accelerometer/gyroscope the value is for
+* The 
+    * tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
 
 ---
 ### Tidying Data Process
 ---
+This tidying process was performed on a Windows 7 computer using 64 bit version of R 3.1.2 using the dplyr library
+
 1. Read the X_test.txt file into a data frame. This file represents the features of the experiment for the test subjects
 2. Read the Y_test.txt into a data frame. This file represents the activity performed assocaited with each record of the X_test.txt data set.
 3. Read the subject_test.txt into a data frame. This file represents the subject associated with each record of the X_test.txt data set
@@ -24,14 +52,31 @@
 14. Convert the activity column of the data frame created in step 9 as a factor
 15. Set the levels of the activity factor the activity labels created in step 13. This replaces the values 1-6 with the activity values (WALKING, SITTING,...etc)
 16. From the full data set originally created in step 9 the columns with the terms 'meanVal' and 'stdVal' were selected and stored in a separate data frame along with the subject and activity columns. This new data frame consists of only features that from the original data set were labeled as mean() or std(). This does not include features from the original data set with names labeled as meanFreq() or features which averaged signals denotes by featureNameMean
-17. Grouped the data set constructed in step 16 by the subject followed by the activity. 
-18. Summarized the grouped data set in step 17 into the mean values of the grouping.  
-19. Renamed the 'meanVal' columns to 'AvgMeans' and the 'stdVal' columns to 'AvgStd' 
-20. Wrote the resultant data frame in step 19 to a file called tidyData.txt
+17. Group the data set constructed in step 16 by the subject followed by the activity. 
+18. Summarize the grouped data set in step 17 into the mean values of the grouping.  
+19. Rename the 'meanVal' columns to 'AvgMeans' and the 'stdVal' columns to 'AvgStd' to better represent the data
+20. Write the resultant data frame in step 19 to a file called tidyData.txt
 
 ---
-### Tidy Data/Variable Descriptions (CODEBOOK)
+### Tidy Data/Variable Descriptions
 ---
+* The resulting tidy data is a data frame of size 180 x 68
+  * Each record in the data frame is unique representing a subject performing one of the activities
+  * Each column represents an average of the feature for that subject for the given activity
+* Column Structure
+  * subject - ordinal - Range:1-30
+  * activity - categorical - Range:WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+  * Features - continuous - Range: Values normalized from -1 to 1 
+    * Naming convention follows the raw data convention
+      * t is a time domain signal
+      * f is a frequency domain signal
+      * Gravity is a gavity acceleration signal
+      * Body is a body acceleration signal
+      * -XYZ represents the axis the data was read from
+      * For more details read the raw data description above
+    *   AvgMeans - the average mean value of all samples for a subject performing a given activity
+    *   AvgStd - the average standard deviation value of all samples for a subject performing a given activity
+ 
 The tidy data set
 The general principles of tidy data are laid out by Hadley Wickham in this paper and this video. The paper and the video are both focused on the R package, which you may or may not know how to use. Regardless the four general principles you should pay attention to are:
 
@@ -83,4 +128,8 @@ In many cases, the person who collected the data has incentive to make it tidy f
     Step 2 - run the software separately for each sample
     Step 3 - take column three of outputfile.out for each sample and that is the corresponding row in the output data set
 
-You should also include information about which system (Mac/Windows/Linux) you used the software on and whether you tried it more than once to confirm it gave the same results. Ideally, you will run this by a fellow student/labmate to confirm that they can obtain the same output file you did. 
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
+
+This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited.
+
+Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
