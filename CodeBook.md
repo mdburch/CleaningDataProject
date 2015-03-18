@@ -47,7 +47,7 @@
 ---
 ### Tidying Data Process
 ---
-This tidying process was performed on a Windows 7 computer using 64 bit version of R 3.1.2 using the dplyr library.
+This tidying process was performed on a Windows 7 computer using 64 bit version of R 3.1.2 using the dplyr library version 0.4.1
 
 1. Read the X_test.txt file into a data frame. This file represents the feature values of the experiment for the test subjects
 2. Read the Y_test.txt into a data frame. This file represents the activity performed associated with each record of the X_test.txt data set.
