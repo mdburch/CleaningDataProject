@@ -80,7 +80,7 @@ This tidying process was performed on a Windows 7 computer using 64 bit version 
 * Column Structure (features)
   * subject - ordinal - Range:1-30
   * activity - categorical - Range:WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
-  * Features - continuous - Range: Values normalized from -1 to 1 
+  * Features - continuous - Range: average normalized value from -1 to 1 
     * Naming convention follows the raw data convention
       * t is a time domain signal
       * f is a frequency domain signal
