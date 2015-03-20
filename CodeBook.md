@@ -9,10 +9,11 @@
   * A 561-feature vector with time and frequency domain variables.
   * Features are normalized and bounded within [-1,1].
 * Column Structure (features)
-  * Features selected come from the accelerometer and gyroscope 3-axial raw signals (ex. t**Acc**-XYZ and t**Gyro**-XYZ)
   * Prefix of **t** denotes time domain signals captured at a constant rate of 50 hz then filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise (ex. tBodyAcc-XYZ and tGravityAcc-XYZ)
   * Prefix of **f** denotes frequency domain signals derived by using a Fast Fourier Transform (FFT) (ex. fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ)
-  * Acceleration signals were separated in **Body** and **Gravity** acceleration signals using another low pass Butterworth filter with a corner frequency of 0.3 Hz
+  * **Acc** represents accelerometer 3-axial raw signals (ex. tGyro-XYZ)
+  * **Gyro** represents gyroscope 3-axial raw signals (ex. tAcc-XYZ)
+  * Acceleration signals were separated in **Body** and **Gravity** acceleration signals using a low pass Butterworth filter with a corner frequency of 0.3 Hz
   * Ending of **-X** **-Y** or **-Z** denotes which axis of the accelerometer/gyroscope the value
   * **Jerk** represents Jerk signals obtained by body linear acceleration and angular velocity derived in time (ex. tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ)
   * **Mag** represents signals of the magnitude of the three-dimensional signals calculated using the Euclidean norm (ex. tBodyAccMag, tGravityAccMag, tBodyAccJerkMag) 
@@ -61,10 +62,10 @@ This tidying process was performed on a Windows 7 computer using 64 bit version 
 10. Read in the features.txt file into a chracter vector. This file represents the name of all of the features associated with the data found in X_test.txt and X_train.txt
 11. Modify the character vector by replacing '-' with '_' and replacing '()' with 'Val'. This transformation is done to make the column extraction process easier(step 16)
 12. Set the column names of the data frame created in step 9 to 'subject' for the subject column, 'activity' for the activity column, and the modified feature names from step 11 as the feature columns.
-13. Read in the activity_labels.txt values into a factor. This file is set up as a key (numeric 1-6) and value (character activity type) pair. Only the character strings representing activities were stored in the factor. NOTE: If this file were to change where the labels were not listed from numeric 1-6, this step would have to be modified.
-14. Convert the activity column of the data frame created in step 9 to a factor
-15. Set the levels of the activity factor column from step 14 to the activity labels created in step 13. This replaces the values 1-6 with the activity values (WALKING, SITTING,...etc)
-16. From the full data set originally created in step 9, select the columns with the terms 'meanVal' and 'stdVal' and store those columns in a separate data frame along with the subject and activity columns. This new data frame consists of only features that from the original data set labeled as mean() or std(). This does not include features from the original data set with names labeled as meanFreq() or features which averaged signals denoted by featureNameMean
+13. Read in the activity_labels.txt values into a factor. This file is set up as a key (numeric 1-6) and value (character activity type) pair. Only the character strings representing activities (values) were stored in the factor. NOTE: If this file were to change where the labels were not listed from numeric 1-6, this step would have to be modified.
+14. Convert the 'activity' column of the data frame created in step 9 to a factor
+15. Set the levels of the activity factor column from step 14 to the activity labels created in step 13. This replaces the values 1-6 with the activity values (WALKING, WALKING_UPSTAIRS,...etc)
+16. From the full data set originally created in step 9, select the columns with the terms 'meanVal' and 'stdVal' and store those columns in a separate data frame along with the 'subject' and 'activity' columns. This new data frame consists of only features that from the original data set labeled as mean() or std(). This does not include features from the original data set with names labeled as meanFreq() or features which averaged signals denoted by featureNameMean
 17. Group the data set constructed in step 16 by the subject followed by the activity. 
 18. Summarize the grouped data set in step 17 by solving for the mean values of the features for each subject performing each activity (example: solve the mean for the features where the subject is 1 and the activity is WALKING, then solve where the subject is 1 and the activity is SITTING, etc.).  
 19. Rename the 'meanVal' columns to 'AvgMeans' and the 'stdVal' columns to 'AvgStd' to better represent the data
@@ -76,7 +77,7 @@ This tidying process was performed on a Windows 7 computer using 64 bit version 
 * Data Set
   * The resulting tidy data is a data frame of size 180 x 68
   * Each record in the data frame is unique, representing a subject performing one of the activities
-  * Each column represents an average of the feature for that subject for the given activity
+  * Each column represents an average of the feature for a subject performing a given activity
 * Column Structure (features)
   * subject - ordinal - Range:1-30
   * activity - categorical - Range:WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
@@ -88,7 +89,7 @@ This tidying process was performed on a Windows 7 computer using 64 bit version 
       * Body is a body acceleration signal
       * Jerk is  jerk Body linear acceleration
       * Mag is signals of the magnitude of the three-dimensional signals
-      * -XYZ represents the axis the data was read from
+      * _XYZ represents the axis the data was read from
       * For more details read the raw data description above
     *   AvgMeans - the average mean value of all samples of a feature for a subject performing a given activity
     *   AvgStd - the average standard deviation value of all samples of a feature for a subject performing a given activity
